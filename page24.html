@@ -1,0 +1,164 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html> 
+
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>page24</title>
+<meta name="generator" content="Virtual Mechanics SiteSpinner Pro 2.92q">
+<meta http-equiv="imagetoolbar" content="false">
+
+<style type="text/css">
+<!--
+@media all {
+
+a:link {color: #0000ff;}
+a:visited {color: #800080;}
+a:active {color: #ff0000;}
+
+body {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #fffff0;
+}
+img {
+  border-width: 0;
+  vertical-align: top;
+}
+.dfltc {
+  font-family: Verdana;
+  font-size: 13px;
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: none;
+  text-align: left;
+  color: #000000;
+}
+}
+@media screen, print {
+#Oobj1087 {
+  position: absolute;
+  font-size: 10px;
+  z-index: 1;
+  text-align: left;
+  left: 10.20em;
+  top: 23.10em;
+  width: 81.50em;
+  height: 40.20em;
+}
+
+}
+@media handheld, only screen and (max-device-width: 241px) {
+#Oobj1087 {
+  position: absolute;
+  font-size: 10px;
+  z-index: 1;
+  text-align: left;
+  left: 10.20em;
+  top: 23.10em;
+  width: 81.50em;
+  height: 40.20em;
+}
+
+}
+-->
+</style>
+</head> 
+
+<body>
+
+<div id="Oobj1087">
+<div id="Ggeo864" class="dfltc">
+<html>
+<body>
+<form name="myForm">
+<!-- the only thing to note here is that the correct answer
+has a value set to "correct" while incorrect ones do not-->
+Question 1: Groenten worden altijd rechts bovenaan op het bord gedresseerd ?
+<br>
+<input type="radio" name="q1" value="correct">juist<br>
+<input type="radio" name="q1">fout<br>
+<input type="radio" name="q1">#<br>
+<input type="radio" name="q1">None of the Above<br>
+<br>
+<br>
+Question 2: De eregasten worden steeds als laatste bediend ?
+?<br>
+<input type="radio" name="q2">Juist<br>
+<input type="radio" name="q2" value="correct">1<br>
+<input type="radio" name="q2">#<br>
+<input type="radio" name="q2">None of the Above<br>
+<br>
+<br>
+Question 3: Which of these is a symbol?<br>
+<input type="radio" name="q3">A<br>
+<input type="radio" name="q3">1<br>
+<input type="radio" name="q3" value="correct">#<br>
+<input type="radio" name="q3">None of the Above<br>
+<br>
+<br>
+Question 4: Which of these is a comma?<br>
+<input type="radio" name="q4">A<br>
+<input type="radio" name="q4">1<br>
+<input type="radio" name="q4">#<br>
+<input type="radio" name="q4" value="correct">None of the Above<br>
+<br>
+<br>
+
+<!-- make sure the return is part of the onclick attribute or
+the link will work even if the function returns false-->
+<a href="#" onclick="return checkAnswers()">Get Certificate</a>
+
+</form>
+</body>
+
+</html>
+<script language="JavaScript">
+//put all the question sets into this array
+var allQuestions = new Array(document.myForm.q1,
+document.myForm.q2,
+document.myForm.q3,
+document.myForm.q4);
+
+//redirects if 75% or greater, returns false otherwise
+function checkAnswers(){
+var totalScore = 0; //initialize to 0
+
+//go through each question set
+for (var i in allQuestions) {
+var temp = allQuestions[i];
+
+//go through each radio button in the current question set
+for (var j = 0; j < temp.length; j++) {
+
+//if the correct one is chosen then add 1 to total score
+if (temp[j].value == "correct" && temp[j].checked == true) {
+totalScore++;
+}
+}
+}
+
+//if the total percentage is more than 75%
+if ((totalScore/allQuestions.length) >= .75) {
+
+//alert and move on
+alert("Congratulations! Your score of " + totalScore +
+" out of " + allQuestions.length + " is good enough to proceed!");
+
+//make sure this points where you want it to....
+window.location.href = "certificate.html";
+}
+else{
+
+//otherwise alert and return false
+alert("You must get at least 75% correct to move on!");
+return false;
+}
+}
+</script>
+</div>
+</div>
+
+
+</body> 
+</html> 
